@@ -101,11 +101,11 @@ public struct HeroTargetState {
     append(contentsOf: modifiers)
   }
 
-  mutating func append(_ modifier: HeroModifier) {
+  public mutating func append(_ modifier: HeroModifier) {
     modifier.apply(&self)
   }
 
-  mutating func append(contentsOf modifiers: [HeroModifier]) {
+  public mutating func append(contentsOf modifiers: [HeroModifier]) {
     for modifier in modifiers {
       modifier.apply(&self)
     }
