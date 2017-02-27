@@ -156,7 +156,6 @@ internal extension Hero {
 
     context.loadViewAlpha(rootView: toView)
     context.loadViewAlpha(rootView: fromView)
-    context.hide(view: toView)
     container.addSubview(toView)
     container.addSubview(fromView)
 
@@ -172,7 +171,9 @@ internal extension Hero {
     prepareDefaultAnimation()
 
     prepareForAnimation()
-
+    
+    context.hide(view: toView)
+    
     #if os(tvOS)
       animate()
     #else
